@@ -96,7 +96,8 @@
       app:layout_constraintBottom_toBottomOf="parent"
       app:layout_constraintEnd_toEndOf="parent"
       app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintTop_toBottomOf="@id/item_recipe_rating" />
+      app:layout_constraintTop_toBottomOf="@id/item_recipe_rating"
+        android:contentDescription="@string/shared_details" />
 
     <com.raywenderlich.android.tacotuesday.shared.CustomRatingBar
       android:id="@+id/item_recipe_rating"
