@@ -36,8 +36,11 @@ package com.raywenderlich.android.tacotuesday.discover
 
 import androidx.test.core.app.ActivityScenario
 import androidx.test.espresso.Espresso
+import androidx.test.espresso.accessibility.AccessibilityChecks
 import androidx.test.espresso.action.ViewActions
 import androidx.test.espresso.matcher.ViewMatchers
+import androidx.test.espresso.matcher.ViewMatchers.withId
+import com.google.android.apps.common.testing.accessibility.framework.AccessibilityCheckResultUtils.matchesViews
 import com.nhaarman.mockitokotlin2.*
 import com.raywenderlich.android.tacotuesday.MainActivity
 import com.raywenderlich.android.tacotuesday.R
@@ -52,6 +55,7 @@ import dagger.hilt.android.testing.HiltAndroidRule
 import dagger.hilt.android.testing.HiltAndroidTest
 import dagger.hilt.android.testing.UninstallModules
 import kotlinx.coroutines.runBlocking
+import org.hamcrest.Matchers.anyOf
 import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
@@ -81,6 +85,16 @@ class DiscoverFragmentTest {
     runBlocking {
       whenever(repository.randomTacoRecipe()).doReturn(testRecipe)
     }
+    AccessibilityChecks.enable()
+            .setRunChecksFromRootView(true)
+            .setSuppressingResultMatcher(
+                    anyOf(
+                            matchesViews(withId(R.id.discover_button_discard)),
+                            matchesViews(withId(R.id.discover_button_try))
+                    )
+            )
+
+
   }
 
   @Test

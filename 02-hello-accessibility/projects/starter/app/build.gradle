@@ -91,4 +91,6 @@ dependencies {
   kaptAndroidTest "com.google.dagger:hilt-android-compiler:2.28-alpha"
   androidTestImplementation "com.nhaarman.mockitokotlin2:mockito-kotlin:2.2.0"
   androidTestImplementation "org.mockito:mockito-android:3.3.3"
+  androidTestImplementation "androidx.test.espresso:espresso-accessibility:3.3.0"
+
 }
