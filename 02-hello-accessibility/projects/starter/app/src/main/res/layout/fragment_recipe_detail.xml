@@ -56,6 +56,7 @@
             style="@style/AppTheme.TextKicker"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:accessibilityHeading="true"
             android:text="@string/recipe_detail_base_layer" />
 
         <TextView
@@ -69,6 +70,7 @@
             style="@style/AppTheme.TextKicker"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:accessibilityHeading="true"
             android:text="@string/recipe_detail_condiment" />
 
         <TextView
@@ -82,6 +84,7 @@
             style="@style/AppTheme.TextKicker"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:accessibilityHeading="true"
             android:text="@string/recipe_detail_mixin" />
 
         <TextView
@@ -95,6 +98,7 @@
             style="@style/AppTheme.TextKicker"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:accessibilityHeading="true"
             android:text="@string/recipe_detail_seasoning" />
 
         <TextView
@@ -108,6 +112,7 @@
             style="@style/AppTheme.TextKicker"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:accessibilityHeading="true"
             android:text="@string/recipe_detail_shell" />
 
         <TextView
@@ -157,12 +162,15 @@
             android:id="@+id/recipe_nacho_rating_container"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:focusable="true"
+            android:focusableInTouchMode="false"
             android:orientation="vertical">
 
             <TextView
                 style="@style/AppTheme.TextKicker"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:accessibilityHeading="true"
                 android:text="@string/recipe_detail_nacho_rating" />
 
             <com.raywenderlich.android.tacotuesday.shared.CustomRatingBar
@@ -180,12 +188,16 @@
             android:id="@+id/recipe_spice_rating_container"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:focusable="true"
+            android:focusableInTouchMode="false"
+
             android:orientation="vertical">
 
             <TextView
                 style="@style/AppTheme.TextKicker"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:accessibilityHeading="true"
                 android:text="@string/recipe_detail_spice_rating" />
 
             <com.raywenderlich.android.tacotuesday.shared.CustomRatingBar
@@ -200,16 +212,20 @@
 
         </LinearLayout>
 
-        <TextView
-            android:id="@+id/recipe_detail_notes_label"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/recipe_detail_hint_notes" />
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/recipe_detail_notes_edit_text"
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/recipe_detail_notes_input_layout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="match_parent"
+            android:hint="@string/recipe_detail_hint_notes">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/recipe_detail_notes_edit_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
 
         <TextView
             android:id="@+id/recipe_detail_error_view"

@@ -135,8 +135,7 @@ class RecipeDetailFragment : Fragment() {
     recipeDetailMadeIt.setOnCheckedChangeListener { _, _ -> activity?.onBackPressed() }
     recipeNachoRatingContainer.visibility = View.VISIBLE
     recipeSpiceRatingContainer.visibility = View.VISIBLE
-    recipeDetailNotesEditText.visibility = View.VISIBLE
-    recipeDetailNotesLabel.visibility = View.VISIBLE
+    recipeDetailNotesInputLayout.visibility = View.VISIBLE
     recipeDetailMadeIt.visibility = View.VISIBLE
     recipeDetailMadeItLabel.visibility = View.VISIBLE
   }
@@ -151,8 +150,7 @@ class RecipeDetailFragment : Fragment() {
     }
     recipeNachoRatingContainer.visibility = View.GONE
     recipeSpiceRatingContainer.visibility = View.GONE
-    recipeDetailNotesEditText.visibility = View.GONE
-    recipeDetailNotesLabel.visibility = View.GONE
+    recipeDetailNotesInputLayout.visibility = View.GONE
     recipeDetailMadeIt.visibility = View.GONE
     recipeDetailMadeItLabel.visibility = View.GONE
   }
